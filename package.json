@@ -1,6 +1,6 @@
 {
   "name": "math-unlimited",
-  "version": "1.0.0",
+  "version": "1.1.4",
   "description": "A powerful and easy-to-use JavaScript library that brings a wide range of mathematical functionalities under one roof.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -17,24 +17,11 @@
     "build": "npx rollup -c"
   },
   "keywords": [
-    "JavaScript",
-    "TypeScript",
-    "JS",
-    "js",
-    "TS",
-    "ts",
-    "ReactJS",
-    "Reactjs",
-    "NextJS",
-    "Nextjs",
-    "NodeJS",
-    "node.js",
-    "Math",
-    "Addition",
-    "Subtraction",
-    "Multiplication",
-    "Division",
-    "Modulo"
+    "JavaScript", "TypeScript", "JS", "js", "TS", "ts",
+    "ReactJS", "Reactjs", "NextJS", "Nextjs",
+    "NodeJS", "node.js", "Math", "Addition", "Subtraction",
+    "Multiplication", "Division", "Modulo",
+    "Dividend", "Divisor", "Quotient", "Remainder"
   ],
   "author": "Atish Kumar Sahu",
   "license": "ISC",
