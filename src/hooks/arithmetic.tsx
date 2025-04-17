@@ -1,28 +1,30 @@
 const arithmetic = (input1: number, input2: number, choice: string): number => {
-    switch (choice) {
-        case "Addition":
+    const res = choice.toLowerCase();
+    switch (res) {
+        case "addition":
             return input1 + input2;
-        case "Subtraction":
+        case "subtraction":
             return input1 - input2;
-        case "Multiplication":
+        case "multiplication":
             return input1 * input2;
-        case "Division":
+        case "division":
             return input1 / input2;
-        case "Modulo":
+        case "modulo":
             return input1 % input2;
         default:
             throw new Error("Invalid choice");
     }
 };
 const division = (input1: number, input2: number, choice: String): number => {
-    switch(choice) {
-        case "Dividend":
+    const res = choice.toLowerCase();
+    switch(res) {
+        case "dividend":
             return input1;
-        case "Divisor":
+        case "divisor":
             return input2;
-        case "Quotient":
+        case "quotient":
             return input1 / input2;
-        case "Remainder":
+        case "remainder":
             return input1 % input2;
         default:
             throw new Error("Invalid Choice");

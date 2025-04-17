@@ -1,189 +1,127 @@
 # 📦 math-unlimited
 
+
 **`math-unlimited`** is a powerful and comprehensive JavaScript/TypeScript utility library that provides a wide range of mathematical functions and tools for developers, researchers, students, and enthusiasts. Designed with performance and modularity in mind, it offers an intuitive API to handle everything from basic arithmetic to complex mathematical computations.
 
 Whether you're building a scientific application, developing financial software, working on data analysis tools, or just need quick and reliable math functions, `math-unlimited` is your go-to solution.
 
+  
+
 ## cmd Prompt For Installation
 
+  
+
 ```javascript
-npm install math-unlimited
+
+npm  install  math-unlimited@latest
+
 ```
 
 ## 🔧 Key Features
 
--   **Lightweight & Modular**: Import only what you need — no unnecessary bloat.
-    
--   **Typed with TypeScript**: Enjoy full IntelliSense support, type safety, and better developer experience.
-    
--   **Comprehensive Function Set**: Covers basic arithmetic, algebra, geometry, trigonometry, statistics, calculus, number theory, and more.
-    
--   **Optimized for Performance**: All functions are optimized for speed and reliability, suitable for production-level applications.
-    
--   **Fully Tested**: High unit test coverage ensures accuracy and stability across all supported functionalities.
-    
--   **Cross-Platform Compatibility**: Works seamlessly in both Node.js and browser environments.
+  
+
+-  **Lightweight & Modular**: Import only what you need — no unnecessary bloat.
+
+-  **Typed with TypeScript**: Enjoy full IntelliSense support, type safety, and better developer experience.
+
+-  **Comprehensive Function Set**: Covers basic arithmetic, algebra, geometry, trigonometry, statistics, calculus, number theory, and more.
+
+-  **Optimized for Performance**: All functions are optimized for speed and reliability, suitable for production-level applications.
+
+-  **Fully Tested**: High unit test coverage ensures accuracy and stability across all supported functionalities.
+
+-  **Cross-Platform Compatibility**: Works seamlessly in both Node.js and browser environments.
 
 
-## Required Packages
+##  arithmetic (input1, input2, choice)
 
-**1 npm init -y**
+This method is used for to perform the basic `arithmetic` operations like `Addition(+)`, `Subtraction(-)`, `Multiplication(*)`, `Division(/)`, `Modulo(%)`. In arithmetic method it will took three arguments `input1`, `input2`, and `choice`.
 
+**input1**: This is the first operand value.
+**input2**: This is the second operand value.
+**choice**: User will choose one option from [+, -, *, /, %]
 
-**2 npm i rollup**
+    Addition = num1 + num2
+    Subtraction = num1 - num2
+    Multiplication = num1 * num2
+    Division = num1 / num2
+    Modulo(Remainder) = num1 % num2
 
-
-**3 npm i react react-dom**
-
-
-**4 npm i tslib**
-
-
-**5 npm i @rollup/plugin-babel**
-
-
-**6 npm i @rollup/plugin-typescript**
-
-
-**7 npm i @types/react**
-
-
-
-
-## arithmetic(input1: number, input2: number, choice: string)
+### Example Code
 
 ```javascript
-import React, { useState } from 'react'
-import {arithmetic} from 'math-unlimited';
-const App = () => {
-  const [result, setResult] = useState(0);
-  const HandleArithmetic = (e) => {
-    e.preventDefault();
-    const input1 = parseInt(e.target.ip1.value);
-    const input2 = parseInt(e.target.ip2.value);
-    const choice = e.target.choice.value;
-    const result = arithmetic(input1, input2, choice);
-    setResult(result);
-    e.target.reset();
-  }
-  return (
-    <div>
-      <form onSubmit={HandleArithmetic}>
-        <input type='text' id='ip1' name='ip1' placeholder='Enter Input1' />
-        <input type='text' id='ip2' name='ip2' placeholder='Enter Input2' />
-        <select id='choice' name='choice'>
-          <option value="Addition">Addition</option>
-          <option value="Subtraction">Subtraction</option>
-          <option value="Multiplication">Multiplication</option>
-          <option value="Division">Division</option>
-          <option value="Modulo">Modulo</option>
-        </select>
-        <input type='submit' value="Result" />
-      </form>
-      <h1>Result: {result}</h1>
-    </div>
-  )
+import {arithmetic} from "math-unlimited";
+let num1 = 100, num2 = 200;
+console.log(arithmetic(num1, num2, "Addition")); // 300
+console.log(arithmetic(num1, num2, "SUBTRACTION")); // -100
+console.log(arithmetic(num1, num2, "multiplication")); // 20000
+console.log(arithmetic(num1, num2, "DiViSiOn")); // 0.5
+console.log(arithmetic(num1, num2, "mODULO")); // 100
+```
+
+In the above code you can observe after added the input1 and input2 i wrote the options in different types of string writing format patterns. but the code is working fine. The reason is in the package  i convert the string into `lowercase` so you can give any type of string writing format.
+
+## division (input1, input2, choice)
+
+This method is used for to perform the Division operation and it will display the `Divisor`, `Dividend`, `Quotient` and `Remainder`. In division method it will took three arguments `input1`, `input2`, `choice`.
+
+**input1**: This is the first operand value.  
+**input2**: This is the second operand value.  
+**choice**: User will choose one option from [Divisor, Dividend, Quotient, Remainder]
+
+![Division Example](https://res.cloudinary.com/duke5nl3i/image/upload/v1744910976/Division_aj1rzn.png)
+
+### Example Code
+
+```javascript
+import {division} from "math-unlimited";
+let num1 = 150, num2 = 7;
+console.log(division(num1, num2, "Dividend")); // 150
+console.log(division(num1, num2, "dIVISOR")); // 7
+console.log(division(num1, num2, "Quotient")); // 21.428571428571427
+console.log(division(num1, num2, "REMAINDER")); // 3
+```
+In the above code you can observe after added the input1 and input2 i wrote the options in different types of string writing format patterns. but the code is working fine. The reason is in the package i convert the string into `lowercase` so you can give any type of string writing format.
+
+##  evenOdd(input)
+
+This method is used for to calculate either the number is `Even Number` or `Odd Number`. This is particularly used for to calculate and return only for Even and Odd Number. In this method it need only one argument `input` and it must be Integer type.
+
+**input**: Using the value of this argument code will calculate for even and odd.
+
+```javascript
+if(i % 2 === 0) {
+	return "Even Number";
+} else {
+	return "Odd Number";
 }
-
-export default App
 ```
-The `arithmetic(input1: number, input2: number, choice: string)` function accepts user inputs in the form of two numeric values (`input1` and `input2`) and a string value (`choice`). Based on the specified `choice`, the function performs the corresponding arithmetic operation and returns the result.
 
-The parameters are defined as follows:
-
--   `input1`: A number representing the first operand.
-    
--   `input2`: A number representing the second operand.
-    
--   `choice`: A string indicating the arithmetic operation to perform. The valid options are:
-    
-    -   `Addition`
-        
-    -   `Subtraction`
-        
-    -   `Multiplication`
-        
-    -   `Division`
-        
-    -   `Modulo`
-        
-
-The function executes the operation specified by the `choice` parameter and returns the appropriate result.
-
-## division(input1: number, input2: number, choice: String)
+### Example Code
 
 ```javascript
-import React, { useState } from "react";
-import { division } from "math-unlimited";
-const App = () => {
-  const [output, setOutput] = useState(0);
-  const HandleDivision = (e) => {
-    e.preventDefault();
-    const ip1 = parseInt(e.target.in1.value);
-    const ip2 = parseInt(e.target.in2.value);
-    const option = e.target.option.value;
-    const output = division(ip1, ip2, option);
-    setOutput(output);
-    e.target.reset();
-  }
-  return (
-    <>
-      <div>
-        <form onSubmit={HandleDivision}>
-          <input type="text" id="in1" name="in1" placeholder="Enter Input1" />
-          <input type="text" id="in2" name="in2" placeholder="Enter Input2" />
-          <select id="option" name="option">
-            <option value="Dividend">Dividend</option>
-            <option value="Divisor">Divisor</option>
-            <option value="Quotient">Quotient</option>
-            <option value="Remainder">Remainder</option>
-          </select>
-          <input type="submit" value="Submit" />
-        </form>
-        <h1>Result: {output}</h1>
-      </div>
-    </>
-  );
-};
-export default App;
+import {evenOdd} from "math-unlimited";
+console.log(evenOdd(20)); // Even Number
+console.log(evenOdd(21)); // Odd Number
 ```
 
-The `Division` function performs the mathematical operation based on the user's choice.
+## isDivisible(input, divisibleBy)
 
-## Parameters
+This method is used for to calculate any number is divisible by any given number of not. This method need two arguments `input` and `divisibleBy` and in output it will return String output.
 
--   `input1` (number): The first input number.
+```javascript
+if(input % divisibleBy === 0) {
+	return `${input} Divisible By ${divisibleBy}.`
+} else {
+	return `${input} Is Not Divisible By ${divisibleBy}.`
+}
+```
+### Example Code
 
--   `input2` (number): The second input number.
-
--   `choice` (string): The operation selected by the user.
-
-## Logic
-
-
-**1 Operation** 
-
-* Handles the computation based on the choice value.
-
-* Supported choices:
-
-	- `Dividend`: Returns the first input number (input1).
-
-	- `Divisor`: Returns the second input number (input2).
-
-	- `Quotient`: Performs division (input1 / input2).
-
-	- `Remainder`: Computes the remainder (input1 % input2).
-
-
-## How They Work Together
-
-* The App component provides a user interface to input data and interact with the Division function.
-
-* On form submission:
-	- Input values are retrieved from the form fields.
-	
-	- The Division function computes the result based on the selected operation.
-	
-	- The computed result is stored in the output state and displayed in the UI.
+```javascript
+import {isDivisible} from  "math-unlimited";
+console.log(isDivisible(20, 3)); // 20 Is Not Divisible By 3.
+console.log(isDivisible(21, 3)); // 21 Divisible By 3.
+```
 
