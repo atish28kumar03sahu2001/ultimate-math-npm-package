@@ -1,6 +1,6 @@
 {
   "name": "math-unlimited",
-  "version": "1.2.6",
+  "version": "1.3.1",
   "description": "A powerful and easy-to-use JavaScript library that brings a wide range of mathematical functionalities under one roof.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -22,7 +22,8 @@
     "NodeJS", "node.js", "Math", "Addition", "Subtraction",
     "Multiplication", "Division", "Modulo",
     "Dividend", "Divisor", "Quotient", "Remainder", "Even Number", "Odd Number",
-    "Even Number Series", "Odd Number Series", "Divisibility Number Series"
+    "Even Number Series", "Odd Number Series", "Divisibility Number Series",
+    "Factorial Number", "Permutation Number", "Combination Number"
   ],
   "author": "Atish Kumar Sahu",
   "license": "ISC",

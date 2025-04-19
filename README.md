@@ -43,7 +43,7 @@ Division = Operand1 / Operand2
 Modulo(Remainder) = Operand1 % Operand2
 ```
 
-### Example Code
+## Example Code
 
 ```javascript
 import {arithmetic} from  "math-unlimited";
@@ -69,7 +69,7 @@ This method is used for to perform the Division operation and it will display th
 
 ![Division Example](https://res.cloudinary.com/duke5nl3i/image/upload/v1744910976/Division_aj1rzn.png)
 
-### Example Code
+## Example Code
 
 ```javascript
 import {division} from  "math-unlimited";
@@ -96,7 +96,7 @@ if(inputNumber % 2 === 0) {
 }
 ```
 
-### Example Code
+## Example Code
 
 ```javascript
 import {evenOdd} from  "math-unlimited";
@@ -116,7 +116,7 @@ if(inputNumber % divisibleBy === 0) {
 }
 ```
 
-### Example Code
+## Example Code
 
 ```javascript
 import {isDivisible} from  "math-unlimited";
@@ -132,7 +132,7 @@ The evenFromArray method is highly versatile, enabling the handling of various t
 
 **...args**: A rest parameter, allowing additional arguments to be passed. Each additional argument can also be: A number. An array of numbers. A string of comma-separated numbers.
 
-### Example Code
+## Example Code
 
 ```javascript
 import {evenFromArray} from "math-unlimited";
@@ -149,7 +149,7 @@ The `oddFromArray` method is a utility designed to filter and return all **odd n
 
 **…args**: -   A rest parameter allowing multiple additional arguments. Each argument can also be A number (e.g., `9`). An array of numbers (e.g., `[11, 13]`). A comma-separated string of numbers (e.g., `"15,17"`).
 
-### Example Code
+## Example Code
 
 ```javascript
 import {oddFromArray} from "math-unlimited";
@@ -168,7 +168,7 @@ The `divisibilityArray` method is a flexible and robust utility that processes v
     
 **...args**: A rest parameter allowing additional arguments, each of which can be a number, an array of numbers, or a comma-separated string of numbers.
 
-### Example Code
+## Example Code
 
 ```javascript
 import {divisibilityArray} from "math-unlimited";
@@ -188,7 +188,7 @@ The `nonDivisibilityArray` function processes various types of inputs to extract
     
 **...arg` (number | number[] | string)**:   Additional inputs, each of which can also be a number, an array of numbers, or a comma-separated string of numbers.
 
-### Example Code
+## Example Code
 
 ```JavaScript
 import {nonDivisibilityArray} from "math-unlimited";
@@ -204,7 +204,7 @@ You need to generate a list of even numbers in a string format for display or fu
 
 **range: number** The method expects a single argument, a number. This argument specifies the upper limit of the range up to which even numbers should be identified and included in the resulting string.
 
-### Example Code
+## Example Code
 
 ```javascript
 import {evenNumbersUpToN} from "math-unlimited";
@@ -221,7 +221,7 @@ A dynamic range of even numbers needs to be generated based on custom start (ran
 
 **range2: number**: A number representing the ending point of the range. Specifies the upper limit up to which even numbers are included.
 
-### Example Code
+## Example Code
 
 ```javascript
 import {evenNumbersFromRange} from "math-unlimited";
@@ -235,6 +235,8 @@ The `oddNumbersUpToN` method is a utility function designed to generate a string
 A dynamic list of odd numbers is required, up to a specific range, in a clean string format. The output can be used for display, logging, or further processing. It provides a straightforward solution for extracting odd numbers from 0 to any upper limit. The `oddNumbersUpToN` method has the following arguments. 
 
 **range: number** The method expects a single argument, a number. This argument specifies the upper limit of the range up to which even numbers should be identified and included in the resulting string.
+
+## Example Code
 
 ```javascript
 import {oddNumbersUpToN} from "math-unlimited";
@@ -252,7 +254,7 @@ A dynamic range of odd numbers needs to be generated between custom start (range
 
 **range2: number**: A number representing the ending point of the range. Specifies the upper limit up to which even numbers are included.
 
-### Example Code
+## Example Code
 
 ```javascript
 import {oddNumbersFromRange} from "math-unlimited";
@@ -270,7 +272,7 @@ The `divisibleNumbersUpToN` method is useful in scenarios where: You need to gen
 
 **divisibleBy: number**: A number used as the divisor for the divisibility check. Specifies the number by which all numbers within the range are tested for divisibility.
 
-### Example Code
+## Example Code
 
 ```javascript
 import {divisibleNumbersUpToN} from "math-unlimited";
@@ -278,7 +280,7 @@ console.log(divisibleNumbersUpToN(20, 5));// 0 5 10 15 20
 console.log(divisibleNumbersUpToN(50, 7)); // 0 7 14 21 28 35 42 49
 ```
 
-### divisibleNumbersFromRange (range1, range2, divisibleBy)
+## divisibleNumbersFromRange (range1, range2, divisibleBy)
 
 This `divisibleNumbersFromRange` method generates a string of numbers within a specified range that are divisible by a given number. It is useful for tasks where you need to filter numbers based on divisibility criteria and return them as a space-separated string.
 
@@ -290,14 +292,13 @@ This method is typically used in scenarios where You need to find and display al
 
 **divisibleBy: number**: Represents the divisor. This is the number used to check divisibility for each number in the specified range.
 
-### Example Code
+## Example Code
 
 ```javascript
 import {divisibleNumbersFromRange} from "math-unlimited";
 console.log(divisibleNumbersFromRange(20, 50, 5));// 20 25 30 35 40 45 50
 console.log(divisibleNumbersFromRange(50, 80, 7)); // 56 63 70 77
 ```
-
 
 ## nonDivisibleNumbersUpToN(range, divisibleBy)
 
@@ -310,7 +311,7 @@ Identify numbers in a range that are not divisible by a specific value. Format t
 
 **divisibleBy: number**: Represents the divisor. This number is used to check the divisibility condition for each number in the range.
 
-### Example Code
+## Example Code
 
 ```javascript
 import {nonDivisibleNumbersUpToN} from "math-unlimited";
@@ -318,7 +319,7 @@ console.log(nonDivisibleNumbersUpToN(10, 5));// 1 2 3 4 6 7 8 9
 console.log(nonDivisibleNumbersUpToN(10, 7)); // 1 2 3 4 6 7 8 9
 ```
 
-### nonDivisibleNumbersFromRange(range1, range2, divisibleBy)
+## nonDivisibleNumbersFromRange(range1, range2, divisibleBy)
 
 This `nonDivisibleNumbersFromRange` method generates a string of numbers within a specified range that are not divisible by a given number. It is helpful when filtering numbers based on divisibility criteria and presenting the results in a space-separated string format. Identify numbers in a specific range that are not divisible by a given value. Format these numbers as a space-separated string for easy presentation or further processing.
 
@@ -330,7 +331,7 @@ Filtering numbers in a given range based on divisibility conditions. Preparing n
 
 **divisibleBy: number** Represents the divisor. This is the number used to check the divisibility condition for each number in the range.
 
-### Example Code
+## Example Code
 
 ```javascript
 import {nonDivisibleNumbersFromRange} from "math-unlimited";
@@ -338,7 +339,53 @@ console.log(nonDivisibleNumbersFromRange(10, 20, 5));// 11 12 13 14 16 17 18 19
 console.log(nonDivisibleNumbersFromRange(10, 20, 7)); // 10 11 12 13 15 16 17 18 19 20
 ```
 
-### Conclusion
+## factorialNumber(n)
+
+The given function `factorialNumber` is a TypeScript implementation of a recursive algorithm to calculate the factorial of a non-negative integer. It uses memoization to optimize performance by caching previously computed results. Memoization is achieved using the `factorialCache` object, which maps input numbers to their corresponding factorial values.
+
+The factorial of a number `n`, denoted as `n!`, is the product of all positive integers from `1` to `n`. For example, 
+```javascript
+5! = 5 x 4 x 3 x 2 x 1 = 120
+Special cases include 0!=1, which is a standard mathematical definition.
+```
+The `factorialNumber(n)` has only one argument which is `n: number` so user will send a integer parameter to the function.
+
+## Example Code
+
+```javascript
+import {factorialNumber} from "math-unlimited";
+console.log(factorialNumber(5));  // 120
+console.log(factorialNumber(6)); // 720
+console.log(factorialNumber(10)); // 3628800
+```
+
+##  permutation(n, r)
+
+The given function `permutation` calculates the number of permutations of `r` objects selected from a set of `n` distinct objects. A permutation is an arrangement of objects in a specific order, and the formula for calculating permutations is: **P(n, r) = n! / (n - r)!**. Here, `n!` is the factorial of nnn, and `(n−r)!` is the factorial of `n−r`. The function uses the previously defined `factorialNumber` function to compute these factorial values. The permutation(n, r) has two arguments **n: number** and **r: number** which need integer parameters to perform the Permutation operation.
+
+```javascript
+import {permutation} from "math-unlimited";
+console.log(permutation(5, 3)); // Output: 60
+console.log(permutation(6, 2)); // Output: 30
+console.log(permutation(4, 4)); // Output: 24
+console.log(permutation(9, 6)); // Output: 60480
+```
+
+##  combination(n, r)
+
+The `combination` function calculates the number of combinations of `r `objects selected from a set of `n` distinct objects. In combinations, the order of selection does not matter. The mathematical formula for combinations is: **C(n, r) = n! / r! x (n - r)!** `n!` is the factorial of `n`, `r!` is the factorial of `r`, and  `(n−r)!` is the factorial of `n−r`.  This function leverages the `factorialNumber` function to compute the factorial values and calculates the result using the above formula.
+
+```JavaScript
+import {combination} from "math-unlimited";
+console.log(combination(9, 6)); // Output: 84
+console.log(combination(5, 3)); // Output: 10
+console.log(combination(6, 2)); // Output: 15
+console.log(combination(4, 4)); // Output: 1
+```
+
+
+## Conclusion
 
 In conclusion, **math-unlimited** stands out as an essential utility library for JavaScript/TypeScript developers, offering a versatile and efficient suite of mathematical tools. Its intuitive API, performance-driven design, and modular structure make it an invaluable resource for a diverse range of applications, from simple computations to advanced scientific or financial projects. Whether you're a developer, researcher, or enthusiast, **math-unlimited** empowers you to handle mathematical challenges with ease and precision.
+
 
