@@ -382,10 +382,123 @@ console.log(combination(5, 3)); // Output: 10
 console.log(combination(6, 2)); // Output: 15
 console.log(combination(4, 4)); // Output: 1
 ```
+## palindromNumber(input)
+This function takes a single argument, `num`, which is a number. It checks if the given number is a palindrome. The function initializes two variables: NUM, which stores the original number, and count, set to 0.
 
+It uses a while loop to reverse the digits of the input number by taking the remainder (rem) when divided by 10 and then updating the reversed number (count) accordingly.
+
+After reversing, it compares the original number (NUM) with the reversed number (count). If they are equal, the number is a palindrome, and the function returns a string stating that the number is a palindrome; otherwise, it states that the number is not a palindrome.
+
+## Example Code
+
+```javascript
+import {palindromNumber} from  "math-unlimited";
+console.log(palindromNumber(12321)); // 12321 is a palindrome number
+console.log(palindromNumber(12345)); // 12345 is not a palindrome number
+```
+## palindromeNumberToN(range)
+This function takes one argument, range, which is a number specifying the range up to which palindrome numbers need to be found. It generates a list of all palindrome numbers from 0 to the specified range.
+
+The function initializes an empty array, palindromes. It uses a for loop to iterate through numbers from 0 to range. For each number, it calls the palindromNumber function to check if the number is a palindrome. If the number is a palindrome, it is added to the palindromes array. Finally, it returns the array of all palindrome numbers within the range.
+
+## Example Code
+
+```javascript
+import {palindromeNumberToN} from  "math-unlimited";
+console.log(palindromeNumberToN(30)); // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22 ]
+console.log(palindromeNumberToN(50)); // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44 ]
+```
+
+## palindromeNumberToRange(range1, range2)
+
+This function takes two arguments, range1 and range2, which define the start and end of a range. It generates a list of all palindrome numbers within the specified range (inclusive).
+
+The function initializes an empty array, palindromes. It uses a for loop to iterate through numbers from range1 to range2. For each number, it calls the palindromNumber function to check if the number is a palindrome. If the number is a palindrome, it is added to the palindromes array. Finally, it returns the array of all palindrome numbers in the specified range.
+
+## Example Code
+
+```JavaScript
+import {palindromeNumberToRange} from  "math-unlimited";
+console.log(palindromeNumberToRange(30, 50)); // [ 33, 44 ]
+console.log(palindromeNumberToRange(70, 90)); // [ 77, 88 ]
+```
+## palindromeNumberFromArray(input[] || ...args)
+
+### Arguments
+
+`inputArray`: Can be a number, an array of numbers, or a comma-separated string of numbers.
+
+`...args`: Additional arguments of similar types (`number`, `number[]`, or `string`), allowing for combining multiple inputs.
+
+### Working
+
+It identifies all palindrome numbers from the provided input(s), which can include a combination of numbers, arrays, or strings.
+
+The function defines a helper function, `flattenToNumbers`, which Converts a single number into an array containing that number. Splits a comma-separated string into an array of numbers. Flattens nested arrays into a single-level array of numbers.
+
+It uses this helper function to normalize all inputs (inputArray and ...args) into a flat array of numbers. It filters this array, keeping only the numbers that are palindromes (as determined by the palindromNumber function). Finally, it returns an array of palindrome numbers extracted from the inputs.
+
+## Example Code
+
+```javascript
+import {palindromeNumberFromArray} from  "math-unlimited";
+console.log(palindromeNumberFromArray(11, 20, 33, 40, 55, 60, 77, 80, 99)); // [ 11, 33, 55, 77, 99 ]
+console.log(palindromeNumberFromArray([11, 20, 33, 40, 55, 60, 77, 80, 99])); // [ 11, 33, 55, 77, 99 ]
+console.log(palindromeNumberFromArray("11, 20, 33, 40, 55, 60, 77, 80, 99")); // [ 11, 33, 55, 77, 99 ]
+```
+
+## primeNumber(input)
+
+This function determines whether a given number is a prime number. It accepts a number (`num`) as input and returns a string indicating whether the number is prime or not. The function first checks for edge cases: numbers less than or equal to 1 are not prime, and 2 is the smallest prime number. 
+
+For numbers greater than 2, it eliminates even numbers, as they cannot be prime. It then iteratively checks divisors from 3 up to the square root of the number, skipping even numbers. If any divisor evenly divides the number, it returns a message stating the number is not prime. If no divisors are found, it confirms the number is prime.
+
+## Example Code
+
+```javascript
+import {primeNumber} from  "math-unlimited";
+console.log(primeNumber(29)); // 29 is a prime number.
+console.log(primeNumber(30)); // 30 is not a prime number.
+```
+
+## primeNumberToN(range)
+
+This function generates all prime numbers from 2 up to a given range (range). It iterates through numbers starting from 2 to the provided range. For each number, it uses the primeNumber function to check if it is prime. If confirmed as prime, the number is added to the result array, primes. The function returns the array of all prime numbers within the specified range.
+
+## Example Code
+
+```javascript
+import {primeNumberToN} from  "math-unlimited";
+console.log(primeNumberToN(50)); // [ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 ]
+console.log(primeNumberToN(100)); // [ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 ]
+```
+## primNumberToRange(range1, range2)
+
+This function identifies all prime numbers within a specified range defined by two numbers: range1 (start of the range) and range2 (end of the range). It iterates through all numbers between range1 and range2 inclusive. Using the primeNumber function, it checks each number for primality and adds prime numbers to the result array, primes. The function then returns the array of prime numbers within the provided range.
+
+## Example Code
+
+```javascript
+import {primNumberToRange} from  "math-unlimited";
+console.log(primNumberToRange(30, 50)); // [ 31, 37, 41, 43, 47 ]
+console.log(primNumberToRange(60, 80)); // [ 61, 67, 71, 73, 79 ]
+```
+
+## primeNumbersFromArray(input[] || ...args)
+
+This function takes an array, number, or string of numbers and additional optional arguments (which can also be numbers, arrays, or strings) and identifies all prime numbers within this combined input. 
+It uses a helper function, `flattenToNumbers`, to normalize and extract numbers from different input types.  This helper flattens arrays, parses strings (comma-separated numbers), and handles individual numbers, converting all inputs into a unified array of numbers. 
+It then filters this array to retain only prime numbers, verified using the `primeNumber` function. Finally, the function returns an array containing all the prime numbers extracted and verified from the input.
+
+## Example Code
+
+```javascript
+import {primeNumbersFromArray} from  "math-unlimited";
+console.log(primeNumbersFromArray("11,12,13,14,15,16,17,18,19,20")); // [ 11, 13, 17, 19 ]
+console.log(primeNumbersFromArray(11,12,13,14,15,16,17,18,19,20)); // [ 11, 13, 17, 19 ]
+console.log(primeNumbersFromArray([11,12,13,14,15,16,17,18,19,20])); // [ 11, 13, 17, 19 ]
+```
 
 ## Conclusion
 
 In conclusion, **math-unlimited** stands out as an essential utility library for JavaScript/TypeScript developers, offering a versatile and efficient suite of mathematical tools. Its intuitive API, performance-driven design, and modular structure make it an invaluable resource for a diverse range of applications, from simple computations to advanced scientific or financial projects. Whether you're a developer, researcher, or enthusiast, **math-unlimited** empowers you to handle mathematical challenges with ease and precision.
-
-
