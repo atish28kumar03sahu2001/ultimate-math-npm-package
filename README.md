@@ -499,6 +499,139 @@ console.log(primeNumbersFromArray(11,12,13,14,15,16,17,18,19,20)); // [ 11, 13, 
 console.log(primeNumbersFromArray([11,12,13,14,15,16,17,18,19,20])); // [ 11, 13, 17, 19 ]
 ```
 
+## reverseNumber(input)
+This function takes a single number as input and returns its digits reversed. It initializes a variable `rev` to store the reversed number and iteratively constructs it by extracting the last digit of the input (using modulo 10) and adding it to `rev` after shifting its digits left (multiplying by 10). The input number is reduced in each iteration by dividing it by 10 and truncating the decimal part using `Math.floor`. This process continues until the input becomes 0, ensuring that all digits are processed.
+
+## Example Code
+```javascript
+import {reverseNumber} from "math-unlimited";
+console.log(reverseNumber(123)); // 321
+console.log(reverseNumber(784)); // 487
+console.log(reverseNumber(981)); // 189
+```
+## reverseNumberToN(range)
+
+This function generates an array of reversed numbers for all integers from 0 up to a given range. It initializes an empty array `result` and uses a loop to iterate through each number from 0 to the specified range. For each number, it calls the `reverseNumber` function to reverse its digits and pushes the result into the `result` array. The function finally returns the array of reversed numbers, providing an easy way to see the reversed counterparts of numbers within a specific range starting from 0.
+
+## Example Code
+```javascript
+import  {reverseNumberToN}  from  "math-unlimited";
+console.log(reverseNumberToN(10)); // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1 ]
+console.log(reverseNumberToN(20)); // [ 0,  1,  2,  3,  4,  5,  6, 7,  8,  9,  1, 11, 21, 31, 41, 51, 61, 71, 81, 91,  2 ]
+console.log(reverseNumberToN(30)); // [ 0,  1,  2,  3,  4,  5,  6,  7,  8, 9,  1, 11, 21, 31, 41, 51, 61, 71,  81, 91,  2, 12, 22, 32, 42, 52, 62, 72, 82, 92, 3 ]
+```
+
+## reverseNumberToRange(range1, range2)
+
+This function reverses the digits of numbers within a specified range, defined by two integers `range1` and `range2`. It initializes an empty array `result` and iterates from the lower bound `range1` to the upper bound `range2`, calling the `reverseNumber` function for each number in this range. Each reversed number is added to the `result` array, which is returned as the output. This function is a flexible extension of `reverseNumberToN`, as it allows any starting and ending point for the range.
+
+## Example Code
+```javascript
+import  {reverseNumberToRange}  from  "math-unlimited";
+console.log(reverseNumberToRange(10, 20)); // [ 1, 11, 21, 31, 41, 51, 61, 71, 81, 91, 2 ]
+console.log(reverseNumberToRange(30, 40)); // [ 3, 13, 23, 33, 43, 53, 63, 73, 83, 93, 4 ]
+console.log(reverseNumberToRange(40, 50)); // [ 4, 14, 24, 34, 44, 54, 64, 74, 84, 94, 5 ]
+```
+
+## reverseNumberToArray(input[] || ...args)
+
+This function processes dynamic inputs (a mix of numbers, arrays of numbers, or comma-separated strings representing numbers) to return an array of reversed numbers. It uses a helper function, `flattenToNumbers`, to standardize all input types into a flat array of numbers. The main function then combines all inputs, maps each number through the `reverseNumber` function, and returns the resulting array. This design ensures that the function can handle diverse input types and combinations, making it versatile and powerful for reversing numbers from multiple sources.
+
+## Example Code
+
+```javascript
+import  {reverseNumberToArray}  from  "math-unlimited";
+console.log(reverseNumberToArray(15, 26, 37, 48)); // [ 51, 62, 73, 84 ]
+console.log(reverseNumberToArray([18 , 27 , 36, 45])); // [ 81, 72, 63, 54 ]
+console.log(reverseNumberToArray("51", "43", "67", "91")); // [ 15, 34, 76, 19 ]
+```
+
+## multiplicationTable(input, range)
+The `multiplicationTable` function generates and logs the multiplication table for a given number up to a specified range. It takes two arguments: `input`, the base number for which the table is to be generated, and `range`, which defines the maximum multiplier. The function uses a `for` loop to iterate through all integers from 0 to `range`. For each iteration, it computes the product of `input` and the current multiplier (`i`) and logs the result to the console in the format `{input} * {i} = {product}`. The function is designed to be straightforward, directly outputting the multiplication table to the console, making it useful for displaying results without needing to return any values. The use of template literals ensures clear and formatted output.
+
+## Example Code
+```javascript
+import  {multiplicationTable}  from  "math-unlimited";
+multiplicationTable(44, 5);
+OUTPUT
+44 * 0 = 0
+44 * 1 = 44
+44 * 2 = 88
+44 * 3 = 132
+44 * 4 = 176
+44 * 5 = 220
+```
+
+## digitOfNumber(input)
+
+The `digitOfNumber` function takes a single number as input and logs each digit of the number in reverse order (starting from the least significant digit) to the console. It uses a `while` loop that continues running as long as the input is not zero. Within each iteration, it calculates the remainder (`rem`) of the input divided by 10, which gives the last digit of the number. This digit is then logged to the console. Afterward, the input is reduced by dividing it by 10 and truncating the decimal part using `Math.floor`, effectively removing the last digit. The process repeats until the input becomes zero, ensuring all digits are processed and displayed. This function is useful for breaking down a number into its constituent digits and printing them sequentially.
+
+## Example Code
+
+```javascript
+import  {digitOfNumber}  from  "math-unlimited";
+digitOfNumber(1245); // 5 4 2 1
+digitOfNumber(84316); // 6 1 3 4 8
+digitOfNumber(32489); // 9 8 4 2 3
+```
+
+## armstrongNumber(input)
+
+The `armstrongNumber` function determines whether a given number is an Armstrong number or not. An Armstrong number (or narcissistic number) is a number equal to the sum of its own digits raised to the power of the number of digits. This function takes an integer input and performs two main operations: first, it calculates the number of digits in the input by iteratively extracting each digit using the modulus operator and dividing the number by 10. Next, it calculates the sum of each digit raised to the power of the digit count, again by extracting digits and summing their powers. If the sum matches the original input number, the function returns the input number; otherwise, it returns a string message indicating that the input is not an Armstrong number.
+
+## Example Code
+
+```javascript
+import {armstrongNumber} from "math-unlimited";
+console.log(armstrongNumber(153)); // 153
+console.log(armstrongNumber(253)); // 253 Is Not An Armstrong Number!
+```
+
+## armstrongNumberToN(range)
+
+The `armstrongNumberToN` function generates a list of all Armstrong numbers within a range starting from 0 up to a given number. It takes a single integer `range` as input and iterates from 0 to the range. For each number in the loop, it calls the `armstrongNumber` function to check if the current number is an Armstrong number. If the result matches the number itself, it is added to an array of Armstrong numbers. Once all numbers in the range are processed, the function returns the array of Armstrong numbers, effectively providing a way to explore all Armstrong numbers up to a specific limit.
+
+## Example Code
+
+```javascript
+import {armstrongNumberToN} from "math-unlimited";
+console.log(armstrongNumberToN(500)); // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407 ]
+```
+
+## armstrongNumberToRange(range1, range2)
+
+The `armstrongNumberToRange` function is similar to `armstrongNumberToN`, but it allows for a custom range of numbers to be specified. It takes two arguments, `range1` and `range2`, which define the lower and upper bounds of the range. The function iterates from `range1` to `range2`, inclusive, and uses the `armstrongNumber` function to determine if each number in the range is an Armstrong number. If a number is an Armstrong number, it is added to an array. After completing the iteration, the function returns the array of Armstrong numbers found within the specified range.
+
+## Example Code
+
+```javascript
+import {armstrongNumberToRange} from "math-unlimited";
+console.log(armstrongNumberToRange(100, 1000)); // [ 153, 370, 371, 407 ]
+console.log(armstrongNumberToRange(100, 10000)); // [ 153,  370,  371, 407, 1634, 8208, 9474 ]
+```
+
+## armstrongNumberFromArray(input[] || ...args)
+
+The `armstrongNumberFromArray` function determines Armstrong numbers from a diverse set of inputs, which can include individual numbers, arrays of numbers, or strings representing numbers. It takes a primary input and additional arguments, processes them using the helper function `flattenToNumbers`, and combines all inputs into a single array of numbers. The helper function converts numbers or strings into arrays of numbers and recursively flattens nested arrays. After combining all inputs, the function filters the array to include only those numbers that satisfy the Armstrong number condition, as determined by the `armstrongNumber` function. The resulting array of Armstrong numbers is returned, making this function versatile for different input formats.
+
+## Example Code
+```javascript
+import {armstrongNumberFromArray} from "math-unlimited";
+console.log(armstrongNumberFromArray([ 153, 372, 381, 407 ])); // [ 153, 407 ]
+console.log(armstrongNumberFromArray(11, 1, 12, 2, 13, 3, 14, 4, 15, 5)); // [ 1, 2, 3, 4, 5 ]
+```
+
+## sumofDigits(input)
+
+The `sumofDigits` function calculates the sum of all the digits in a given number. It takes a single integer input and initializes a variable `count` to zero, which will store the cumulative sum of the digits. The function uses a `while` loop to repeatedly extract the last digit of the input number using the modulus operator (`% 10`). This extracted digit is added to `count`, and the input number is then reduced by removing its last digit using integer division (`Math.floor(input / 10)`). This process continues until the input becomes zero, at which point all digits have been processed. Finally, the function returns the total sum of the digits stored in `count`. This utility function is particularly useful in scenarios requiring digit manipulation, such as in numerical puzzles or digital root calculations.
+
+```javascript
+import {sumofDigits} from "math-unlimited";
+console.log(sumofDigits(1234567890)); // 45
+console.log(sumofDigits(114245)); // 17
+console.log(sumofDigits(78159)); // 30
+```
+
 ## Conclusion
 
 In conclusion, **math-unlimited** stands out as an essential utility library for JavaScript/TypeScript developers, offering a versatile and efficient suite of mathematical tools. Its intuitive API, performance-driven design, and modular structure make it an invaluable resource for a diverse range of applications, from simple computations to advanced scientific or financial projects. Whether you're a developer, researcher, or enthusiast, **math-unlimited** empowers you to handle mathematical challenges with ease and precision.
