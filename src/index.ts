@@ -7,3 +7,5 @@ export * from "./hooks/reverseNumber";
 export * from "./hooks/multiplication";
 export * from "./hooks/digitOfNumber";
 export * from './hooks/armstrongNumber';
+export * from './hooks/avgmodmedmean';
+export * from './hooks/fibonacci';

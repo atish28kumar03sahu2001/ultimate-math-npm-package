@@ -1,6 +1,6 @@
 {
   "name": "math-unlimited",
-  "version": "1.5.1",
+  "version": "1.5.4",
   "description": "A powerful and easy-to-use JavaScript library that brings a wide range of mathematical functionalities under one roof.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -24,7 +24,9 @@
     "Dividend", "Divisor", "Quotient", "Remainder", "Even Number", "Odd Number",
     "Even Number Series", "Odd Number Series", "Divisibility Number Series",
     "Factorial Number", "Permutation Number", "Combination Number", "Prime Number",
-    "Reverse Number", "MultiplicationTable", "Digits Of A Number", "Armstrong Number"
+    "Reverse Number", "MultiplicationTable", "Digits Of A Number", "Armstrong Number",
+    "Calculate Mean", "Calculate Median", "Calculate Mode", "Calculate Average",
+    "Fibonacci Number Series", "Nth Fibonacci Number"
   ],
   "author": "Atish Kumar Sahu",
   "license": "ISC",

@@ -632,6 +632,70 @@ console.log(sumofDigits(114245)); // 17
 console.log(sumofDigits(78159)); // 30
 ```
 
+## calculateMean(input[] || ...args)
+
+This function calculates the arithmetic mean (average) of a set of numbers. It accepts various input formats, including a single number, an array of numbers, or a comma-separated string of numbers, and processes all inputs into a single array of numeric values. If the inputs include strings, they are split by commas, and any non-numeric entries are filtered out. After aggregating all valid numbers, the function computes the mean by summing up all the values and dividing by the total count. If no valid numbers are provided, the function returns `null`.
+
+```javascript
+import {calculateMean} from "math-unlimited";
+console.log(calculateMean([1,11,21,31,41,51,61,71,81,91,101])); // 51
+console.log(calculateMean([2,12,22,32,42,52,62,72,82,92,102])); // 52
+console.log(calculateMean([3,13,23,33,43,53,63,73,83,93,103])); // 53
+```
+
+## calculateMedian(input[] || ...args)
+
+The `calculateMedian` function determines the median value of a set of numbers, which is the middle value when the numbers are sorted in ascending order. Similar to `calculateMean`, it supports various input types such as individual numbers, arrays, and comma-separated strings. The function processes all inputs to extract valid numeric values, sorts them, and then calculates the median. For even-length datasets, it returns the average of the two middle values. If the input contains no valid numbers, the function returns `null`.
+
+```javascript
+import {calculateMedian} from "math-unlimited";
+console.log(calculateMedian([1,11,21,31,41,51,61,71,81,91,101])); // 51
+console.log(calculateMedian([2,12,22,32,42,52,62,72,82,92,102])); // 52
+console.log(calculateMedian([3,13,23,33,43,53,63,73,83,93,103])); // 53
+```
+
+## calculateMode(input[] || ...args)
+
+This function computes the mode, which is the value or values that appear most frequently in a dataset. It handles diverse input formats, including single numbers, arrays, and comma-separated strings, aggregating all valid numeric values into an array. The function then counts the frequency of each number and identifies the most frequent ones. If all values occur with the same frequency, the function returns `null` since there is no distinct mode. Otherwise, it returns an array of the mode(s).
+
+```javascript
+import {calculateMode} from "math-unlimited";
+console.log(calculateMode([1,11,11,21,21,31,31,41,41,51,51])); // [ 11, 21, 31, 41, 51 ]
+console.log(calculateMode([2,12,12,22,22,32,42,52,52,62,72])); // [ 12, 22, 52 ]
+console.log(calculateMode([3,13,23,23,33,43,53,63,63,73,73])); // [ 23, 63, 73 ]
+```
+
+## calculateAverage(input[] || ...args)
+
+The `calculateAverage` function calculates the arithmetic mean, which is the same as `calculateMean`. It aggregates numbers from inputs of various formats (a single number, an array, or a comma-separated string) into an array of valid numeric values. It filters out non-numeric data and computes the mean by summing all the numbers and dividing by their count. If there are no valid numeric values in the inputs, the function returns `null`.
+
+```javascript
+import {calculateAverage} from "math-unlimited";
+console.log(calculateAverage([1,11,11,21,21,31,31,41,41,51,51])); // 28.272727272727273
+console.log(calculateAverage([2,12,12,22,22,32,42,52,52,62,72])); // 34.72727272727273
+console.log(calculateAverage([3,13,23,23,33,43,53,63,63,73,73])); // 42.09090909090909
+```
+
+## fibonacciSeries(range)
+
+This function generates and prints the Fibonacci sequence up to a specified range. It initializes the first two numbers of the sequence (`n1 = 0` and `n2 = 1`) and iterates through a `for` loop for the given range. In each iteration, it prints the current Fibonacci number (`n1`) and updates the sequence by calculating the next number as the sum of `n1` and `n2`, assigning `n2` to `n1` and the new sum to `n2`. The function is ideal for displaying the sequence up to a specified number of terms.
+
+```javascript
+import {fibonacciSeries} from "math-unlimited";
+fibonacciSeries(5); // 0 1 1 2 3
+fibonacciSeries(10); // 0 1 1 2 3 5 8 13 21 34
+```
+
+## nthFibonacciNumber(range)
+
+This function calculates and returns the Fibonacci number at the `n`th position in the sequence, where `n` is the provided range. Similar to the first function, it uses two variables (`n1` and `n2`) to keep track of the Fibonacci sequence. It iterates through the sequence using a `for` loop, updating the variables in the same manner. After the loop, it returns the last calculated `n1`, which corresponds to the Fibonacci number at the `n`th position.
+
+```javascript
+import {nthFibonacciNumber} from "math-unlimited";
+console.log(nthFibonacciNumber(20)); // 4181
+console.log(nthFibonacciNumber(40)); // 63245986
+```
+
 ## Conclusion
 
 In conclusion, **math-unlimited** stands out as an essential utility library for JavaScript/TypeScript developers, offering a versatile and efficient suite of mathematical tools. Its intuitive API, performance-driven design, and modular structure make it an invaluable resource for a diverse range of applications, from simple computations to advanced scientific or financial projects. Whether you're a developer, researcher, or enthusiast, **math-unlimited** empowers you to handle mathematical challenges with ease and precision.
